@@ -15,7 +15,11 @@ import Typography from "views/Typography/Typography.jsx";
 import Icons from "views/Icons/Icons.jsx";
 //import Maps from "views/Maps/Maps.jsx";
 import NotificationsPage from "views/Notifications/Notifications.jsx";
+import Landing from '../layouts/Landing'
+
+
 const dashboardRoutes = [
+  
   {
     path: "/dashboard",
     sidebarName: "Dashboard",
@@ -25,7 +29,7 @@ const dashboardRoutes = [
   },
   {
     path: "/user",
-    sidebarName: "User Profile",
+    sidebarName: "Create Profile",
     navbarName: "Profile",
     icon: Person,
     component: UserProfile
@@ -72,7 +76,7 @@ const dashboardRoutes = [
   //   icon: Unarchive,
   //   component: UpgradeToPro
   // },
-  { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
+  { redirect: true, path: "/", to: "/home", navbarName: "Redirect" }
 ];
 
 export default dashboardRoutes;

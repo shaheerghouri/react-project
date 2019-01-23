@@ -6,13 +6,17 @@ import { Router, Route, Switch } from "react-router-dom";
 import "assets/css/material-dashboard-react.css?v=1.5.0";
 
 import indexRoutes from "routes/index.jsx";
+import Landing from './layouts/Landing'
+
 
 const hist = createBrowserHistory();
 
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
+    <Landing path='/home' component={Landing} />
       {indexRoutes.map((prop, key) => {
+       
         return <Route path={prop.path} component={prop.component} key={key} />;
       })}
     </Switch>
