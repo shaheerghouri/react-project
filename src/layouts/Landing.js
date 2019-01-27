@@ -12,9 +12,7 @@ class Landing extends Component {
   render() {
     return (
         
-          <main className="page_wrapper">
-     
-    
+
      <div className="hero-cover"> 
        
    
@@ -26,7 +24,7 @@ class Landing extends Component {
 
            <div className="header__right_box">
              <ul className="header__menu_list header__item--desktop">
-               <li className="header__menu_item"><NavLink to="/dashboard" className="header__menu_link header__menu_link--white">Hec</NavLink></li>
+               <li className="header__menu_item"><NavLink to="/auth" className="header__menu_link header__menu_link--white">Hec</NavLink></li>
                <li className="header__menu_item"><NavLink to="/" className="header__menu_link header__menu_link--white">University</NavLink></li>
                <li className="header__menu_item"><NavLink to="/" className="header__menu_link header__menu_link--white">Registrar</NavLink></li>
                <li className="header__menu_item"><NavLink to="/" className="header__menu_link header__menu_link--white">Dean</NavLink></li>
@@ -42,7 +40,7 @@ class Landing extends Component {
 
        
 
-       <div className="container cover__container--16 cover__content_box--16 hero-cover-img" style={{position: 'relative' }}>
+       <div className="container cover__container--16  hero-cover-img" >
 
          <div className="col-lg-12">
            <div className="row">
@@ -52,30 +50,17 @@ class Landing extends Component {
          </div>
 
          </div>
-         
-       <div className="triangles triangles--brand">
-         <span></span>
-         <span></span>
-       </div>
 
-       
-
-     
-   </div>
-
-     {/* <footer className="footer footer--04"> */}
-
-
-       <div className="footer__description_box--04">
+       <br/>
+      
+        <div className="footer__description_box--04">
          <div className="container footer__container"><span className="footer__description footer__description--04">Blockchain Based Smart Attestation</span><span className="footer__copyright footer__copyright--04"><Link to="/">Smart-Attest Team (UCP)</Link></span></div>
        </div>
+       
+    
 
+   </div>
 
-     {/* </footer> */}
-
-
-
-   </main>
 
 
     );

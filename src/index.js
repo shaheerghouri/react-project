@@ -7,7 +7,7 @@ import "assets/css/material-dashboard-react.css?v=1.5.0";
 
 import indexRoutes from "routes/index.jsx";
 import Landing from './layouts/Landing'
-
+import Check from './layouts/Check'
 
 const hist = createBrowserHistory();
 
@@ -15,6 +15,10 @@ ReactDOM.render(
   <Router history={hist}>
     <Switch>
     <Landing path='/home' component={Landing} />
+    <Check path='/check' component={Check} />
+    
+    <Route path='/auth' component={() => { window.location = 'http://localhost:3000/auth/github'; return null;} }/>
+
       {indexRoutes.map((prop, key) => {
        
         return <Route path={prop.path} component={prop.component} key={key} />;
