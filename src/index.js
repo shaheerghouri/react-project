@@ -14,8 +14,8 @@ const hist = createBrowserHistory();
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-    <Landing path='/home' component={Landing} />
-    <Check path='/check' component={Check} />
+    <Route path='/home' component={Landing} />
+    <Route path='/check' component={Check} />
     
     <Route path='/auth' component={() => { window.location = 'http://localhost:3000/auth/github'; return null;} }/>
 

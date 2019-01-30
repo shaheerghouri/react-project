@@ -55,8 +55,15 @@ class LoginPage extends React.Component {
 
     axios.get('http://localhost:2002/secret?secret=' + secret)
           .then(res => {
+          
 
-            let id = res.data
+          let id = res.data
+          if(id === "failure")
+            {
+              alert("Invalid Secret Key")
+              throw("error")
+            }
+
           return  axios.get(`http://localhost:3002/api/org.collectable.penguin.Collector/${id}`)
           })
           .then((response) => {
@@ -92,7 +99,7 @@ class LoginPage extends React.Component {
             })
           .then((response)=>{
             if(response.status === 204)
-            this.props.history.push('/dashboard')
+            this.props.history.push('/admin/dashboard')
 
 
           })

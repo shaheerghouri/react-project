@@ -24,13 +24,19 @@ class Check extends Component {
 
     componentDidMount(){
 
-       axios.get('http://localhost:3000/api/system/ping')
-            .then( res => {
+       axios.get('http://localhost:3000/api/system/ping', {withCredentials: true})
+            .then( response => {
 
-              
+              if(response.status === 200)
+              this.props.history.push({
+              pathname: '/admin/dashboard',
+              search: '?query=abc',
+              state: { detail: response.data }})
+  
 
              })
             .catch(e => {
+              console.log(e)
               this.setState({post:true})
                 
             })
@@ -70,4 +76,4 @@ class Check extends Component {
   }
 }
 
-export default Check;
+export default withRouter(Check);

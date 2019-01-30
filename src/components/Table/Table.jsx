@@ -16,7 +16,7 @@ function CustomTable({ ...props }) {
     <div className={classes.tableResponsive}>
       <Table className={classes.table}>
         {tableHead !== undefined ? (
-          <TableHead className={classes[tableHeaderColor + "TableHeader"]}>
+          <TableHead className={classes[tableHeaderColor + "TableHeader"]}  >
             <TableRow>
               {tableHead.map((prop, key) => {
                 return (

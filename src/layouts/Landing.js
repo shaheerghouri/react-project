@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import '../assets/css/main.css'
-import logo from '../assets/img/mask.png'
+import logo from '../assets/img/pictures/blockcerts.svg'
 import github from '../assets/img/icons/github.png'
 
 import { Link , NavLink, withRouter} from 'react-router-dom'

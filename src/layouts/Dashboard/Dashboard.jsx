@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect ,withRouter} from "react-router-dom";
 // creates a beautiful scrollbar
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
@@ -19,6 +19,7 @@ import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboar
 import image from "assets/img/sidebar-4.jpg";
 import logo from "assets/img/reactlogo.png";
 
+let Routes = dashboardRoutes;
 const switchRoutes = (
   <Switch>
     {dashboardRoutes.map((prop, key) => {
@@ -29,11 +30,13 @@ const switchRoutes = (
   </Switch>
 );
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mobileOpen: false
+      mobileOpen: false,
+      detail: "HEC"
     };
     this.resizeFunction = this.resizeFunction.bind(this);
   }
@@ -49,10 +52,28 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
+    
     if (navigator.platform.indexOf("Win") > -1) {
       const ps = new PerfectScrollbar(this.refs.mainPanel);
     }
     window.addEventListener("resize", this.resizeFunction);
+   
+    if(this.props.location.state){
+      
+    let res = this.props.location.state.detail.participant.split('#');
+
+      this.setState({ detail:  "Welcome, "+ res[1]});
+      if(res[1] === "TOM"){
+        Routes = dashboardRoutes.filter((route)=> {
+          return route.path.includes('/admin')
+        });
+        console.log(dashboardRoutes[0].path)
+       }
+  }
+    // else{
+    //   this.props.history.push('/home')
+    // }
+
   }
   componentDidUpdate(e) {
     if (e.history.location.pathname !== e.location.pathname) {
@@ -61,6 +82,7 @@ class App extends React.Component {
         this.setState({ mobileOpen: false });
       }
     }
+  
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.resizeFunction);
@@ -70,8 +92,9 @@ class App extends React.Component {
     return (
       <div className={classes.wrapper}>
         <Sidebar
-          routes={dashboardRoutes}
-          logoText={"Smart-Attest"}
+          routes={Routes}
+          logoText={this.state.detail}
+          
           logo={logo}
           image={image}
           handleDrawerToggle={this.handleDrawerToggle}
@@ -81,7 +104,7 @@ class App extends React.Component {
         />
         <div className={classes.mainPanel} ref="mainPanel">
           <Header
-            routes={dashboardRoutes}
+            routes={Routes}
             handleDrawerToggle={this.handleDrawerToggle}
             {...rest}
           />
@@ -104,4 +127,4 @@ App.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(dashboardStyle)(App);
+export default withRouter( withStyles(dashboardStyle)(App));
