@@ -48,8 +48,8 @@ class adminUniversity extends React.Component {
         super(props);
         this.state = {
             table : [
-              ["1", "APPROVED_BY_DEAN", "asdasda", "s150105", "2019-01-29", "Lahore", "UCP",],
-              ["2", "APPROVED", "asdasd", "s150105", "2019-01-29", "Lahore", "UCP",]
+              ["1", "APPROVED_BY_DEAN", "anansn", "s150105", "2019-01-29", "Lahore", "UCP",],
+              ["2", "APPROVED", "asamdsan", "s150105", "2019-01-29", "Lahore", "UCP",]
              ]
         };
       }

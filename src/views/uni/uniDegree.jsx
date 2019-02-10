@@ -48,8 +48,8 @@ class adminUniversity extends React.Component {
         super(props);
         this.state = {
             table : [
-              ["1", "APPROVED_BY_DEAN", "asdasda", "s150105", "2019-01-29", "Lahore", "UCP",],
-              ["2", "APPROVED", "asdasd", "s150105", "2019-01-29", "Lahore", "UCP",]
+              [ "issuer_deparmnt", "s150105", "APPROVED_BY_DEAN", "aaila", "2019-01-29", "Lahore"],
+              [  "issuer_deparmnt", "s150105", "APPROVED_BY_DEAN", "alialia", "2019-01-29", "Lahore"]
              ]
         };
       }
@@ -57,23 +57,23 @@ class adminUniversity extends React.Component {
       componentDidMount(){
 
         let btn = null;
-        let table = [];
-        this.state.table.forEach(ele => {
-          console.log(ele[1])
-            if(ele[1] !== "APPROVED")
-            btn = <Button style={{color:"white", backgroundColor:"red",float:"left"}} onClick={this.handleClick} >Approve</Button>        
-            else
-            btn = <Button style={{color:"white", backgroundColor:"green",float:"left"}} >APPROVED</Button>        
+        // let table = [];
+        // this.state.table.forEach(ele => {
+        //   console.log(ele[1])
+        //     if(ele[1] !== "APPROVED")
+        //     btn = <Button style={{color:"white", backgroundColor:"red",float:"left"}} onClick={this.handleClick} >Approve</Button>        
+        //     else
+        //     btn = <Button style={{color:"white", backgroundColor:"green",float:"left"}} >APPROVED</Button>        
 
-          ele.push(btn);
-          table.push(ele)
-        })
+        //   ele.push(btn);
+        //   table.push(ele)
+        // })
 
 
     
-        this.setState({
-            table:table
-        })
+        // this.setState({
+        //     table:table
+        // })
       }
 
       handleClick = () =>{
@@ -95,7 +95,7 @@ render(){
           <CardBody>
             <Table
               tableHeaderColor="info"
-              tableHead={["DegreeId", "Status", "Issuer", "Student", "Date", "City", "University", "Approve" ]}
+              tableHead={[  "Department", "Student", "Status", "Issuer" , "Date", "City"]}
               tableData={this.state.table}
 
             />

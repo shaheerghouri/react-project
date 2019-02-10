@@ -7,6 +7,28 @@ import dropdownStyle from "assets/jss/material-dashboard-react/dropdownStyle.jsx
 
 const headerLinksStyle = theme => ({
   ...dropdownStyle(theme),
+  root:{
+
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+
+  }, underline: {
+    "&:hover:not($disabled):before,&:before": {
+      borderColor: "#D2D2D2 !important",
+      borderWidth: "1px !important"
+    },  
+    "&:after": {
+      borderColor: "#FFFFFF"
+    }
+  },
+  label:{
+    color: 'white',
+  },
   search: {
     "& > div": {
       marginTop: "0"
@@ -105,7 +127,7 @@ const headerLinksStyle = theme => ({
       width: "-webkit-fill-available",
       margin: "10px 15px 0"
     },
-    display: "inline-block"
+    display: "inline"
   }
 });
 

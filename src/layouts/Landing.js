@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import '../assets/css/main.css'
-import logo from '../assets/img/pictures/blockcerts.svg'
+import logo from '../assets/img/pictures/BlockChain.png'
 import github from '../assets/img/icons/github.png'
 
 import { Link , NavLink, withRouter} from 'react-router-dom'
@@ -27,8 +27,8 @@ class Landing extends Component {
                <li className="header__menu_item"><NavLink to="/auth" className="header__menu_link header__menu_link--white">Hec</NavLink></li>
                <li className="header__menu_item"><NavLink to="/" className="header__menu_link header__menu_link--white">University</NavLink></li>
                <li className="header__menu_item"><NavLink to="/" className="header__menu_link header__menu_link--white">Registrar</NavLink></li>
-               <li className="header__menu_item"><NavLink to="/" className="header__menu_link header__menu_link--white">Dean</NavLink></li>
                <li className="header__menu_item"><NavLink to="/" className="header__menu_link header__menu_link--white">issuer</NavLink></li>
+               <li className="header__menu_item"><NavLink to="/" className="header__menu_link header__menu_link--white">Dean</NavLink></li>
                <li className="header__menu_item"><NavLink to="/" className="header__menu_link header__menu_link--white">Student</NavLink></li>
                <li className="header__menu_item"><NavLink to="/" className="header__menu_link header__menu_link--white"><img src={github} className="cover__img--16" style={{width: '18px', top: '-2px', position: 'relative', marginRight: '2px'}}/>&nbsp;Github</NavLink></li>
              </ul>

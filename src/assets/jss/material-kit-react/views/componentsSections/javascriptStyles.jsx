@@ -34,6 +34,12 @@ const javascriptStyles = {
       lineHeight: "1"
     }
   },
+  button : {
+    color:"white",
+    backgroundColor:"#ef5350",
+    float:"right"
+
+  },
   section: {
     padding: "70px 0 0"
   },

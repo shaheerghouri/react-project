@@ -36,7 +36,7 @@ class adminUniversity extends React.Component {
         super(props);
         this.state = {
             table : [
-              ["UOL", "UOL" , "info@uol.edu.pk", "W4" , "PRIVATE", "0423338712", "Lahore"]
+    
              ],
              classicModal: false,
 
@@ -59,7 +59,7 @@ class adminUniversity extends React.Component {
     }
       componentDidMount(){
 
-        let test = ["UCP", "UCP" , "info@ucp.edu.pk", "W4" , "PRIVATE", "0423338712", "Lahore"]
+        let test = ["alalia", "registrar@ucp.edu.pk", "0423338712"]
       
       
         this.setState({
@@ -80,7 +80,7 @@ render(){
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="info" >
-            <h4 className={classes.cardTitleWhite}>UNIVERSITIES <Button className={classes.button} onClick={this.handleClickOpen} >Add University</Button>
+            <h4 className={classes.cardTitleWhite}>REGISTRAR <Button className={classes.button} onClick={this.handleClickOpen} >Add Registrar</Button>
                   </h4>
             
           </CardHeader>
@@ -115,7 +115,7 @@ render(){
                       >
                         <Close className={classes.modalClose} />
                       </IconButton>
-                      <h4 className={classes.modalTitle} >Add University</h4>
+                      <h4 className={classes.modalTitle} >Add Registrar</h4>
                     </DialogTitle>
                     <DialogContent
                       id="classic-modal-slide-description"
@@ -176,78 +176,6 @@ render(){
                  
                  <GridItem xs={12} sm={12} md={7}>
                    <CustomInput
-                   labelText="Category"
-                      id="category"
-                     formControlProps={{
-                       fullWidth: true
-                     }}
-                   />
-                 </GridItem>
-                 <GridItem xs={12} sm={12} md={5}>
-                   <CustomInput
-                     id="company-disabled"
-                     formControlProps={{
-                       fullWidth: true
-                     }}
-                     inputProps={{
-                       disabled: true
-                     }}
-                   />
-                 </GridItem>
-               </GridContainer>
-
-               <GridContainer>
-                 
-                 <GridItem xs={12} sm={12} md={7}>
-                   <CustomInput
-                   labelText="Sector"
-                      id="sector"
-                     formControlProps={{
-                       fullWidth: true
-                     }}
-                   />
-                 </GridItem>
-                 <GridItem xs={12} sm={12} md={5}>
-                   <CustomInput
-                     id="company-disabled"
-                     formControlProps={{
-                       fullWidth: true
-                     }}
-                     inputProps={{
-                       disabled: true
-                     }}
-                   />
-                 </GridItem>
-               </GridContainer>
-                      
-
-               <GridContainer>
-                 
-                 <GridItem xs={12} sm={12} md={7}>
-                   <CustomInput
-                   labelText="City"
-                      id="city"
-                     formControlProps={{
-                       fullWidth: true
-                     }}
-                   />
-                 </GridItem>
-                 <GridItem xs={12} sm={12} md={5}>
-                   <CustomInput
-                     id="company-disabled"
-                     formControlProps={{
-                       fullWidth: true
-                     }}
-                     inputProps={{
-                       disabled: true
-                     }}
-                   />
-                 </GridItem>
-               </GridContainer>
-               <GridContainer>
-                 
-                 <GridItem xs={12} sm={12} md={7}>
-                   <CustomInput
                    labelText="Landline"
                       id="landline"
                      formControlProps={{
@@ -291,7 +219,7 @@ render(){
           <CardBody>
             <Table
               tableHeaderColor="info"
-              tableHead={["UniversityId", "Name", "Email", "Category", "Sector", "Landline", "City"]}
+              tableHead={["Name", "Email", "Landline"]}
               tableData={this.state.table}
 
             />

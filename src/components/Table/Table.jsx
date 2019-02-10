@@ -33,7 +33,7 @@ function CustomTable({ ...props }) {
         ) : null}
         <TableBody>
           {tableData.map((prop, key) => {
-            return (
+            return  prop.length !== 0 ?
               <TableRow key={key}>
                 {prop.map((prop, key) => {
                   return (
@@ -43,7 +43,8 @@ function CustomTable({ ...props }) {
                   );
                 })}
               </TableRow>
-            );
+              : null;
+            
           })}
         </TableBody>
       </Table>
